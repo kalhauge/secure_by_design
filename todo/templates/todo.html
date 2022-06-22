@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+<section class="vh-100" style="background-color: #3da2c3;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-lg-8 col-xl-6">
+        <div class="card rounded-3">
+          <div class="card-body p-4">
+
+            <p class="mb-2"><span class="h2 me-2">ToDo's</span></p>
+            <!-- <p class="text-muted pb-2">04/01/2020 • ML - 1321</p> -->
+            <ul class="list-group rounded-0">
+              {% for todo in todos %}
+                <li class="list-group-item border-0 d-flex align-items-center ps-0">
+                  {% if todo.is_done %}
+                  <input class="form-check-input me-3" type="checkbox" value="" aria-label="..." 
+                    checked />
+                  <s>{{todo.name}}</s>
+                  {% else %}
+                  <input class="form-check-input me-3" type="checkbox" value="" aria-label="..." 
+                    />
+                  <span>{{todo.name}}</span>
+                  {% endif %}
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
