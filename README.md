@@ -51,8 +51,18 @@ Add a gitignore from https://www.toptal.com/developers/gitignore/api/python,maco
 ```bash
 git init
 git add . 
+git commit -am "Initial commit w. Django"
 ```
 
+### Create an Todo app
 
+```bash
+./manage.py startapp todo
+```
 
+### Run black for the first time
+
+```bash
+black **/*.py
+```
 
