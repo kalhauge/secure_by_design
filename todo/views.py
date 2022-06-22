@@ -1,7 +1,13 @@
 from django.shortcuts import render
 
+from todo.models import Todo
+
 # Create your views here.
 
 
 def index(request):
-    return render(request, "todo.html", {})
+    todos = Todo.objects.all()
+    context = {
+        "todos": todos,
+    }
+    return render(request, "todo.html", context)
